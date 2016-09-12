@@ -1,0 +1,18 @@
+#!/bin/bash -e
+
+set -e
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ROOT_DIR=${SCRIPT_DIR}/..
+
+. ${SCRIPT_DIR}/variables.sh
+. ${PIP_VIRTUAL_ENV_DIR}/bin/activate
+. ${NODEJS_VIRTUAL_ENV_DIR}/bin/activate
+
+# Deactivate virtual environment for NodeJs
+deactivate_node
+
+# Deactivate virtual environment for pip
+deactivate
+
+echo -e "Virtual environments for pip and Node.js are now deactivated!\n"

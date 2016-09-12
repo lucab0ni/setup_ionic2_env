@@ -1,0 +1,14 @@
+#!/bin/bash
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ROOT_DIR=${SCRIPT_DIR}/..
+
+source ${SCRIPT_DIR}/variables.sh
+
+# Activate virtual environment for pip
+source ${PIP_VIRTUAL_ENV_DIR}/bin/activate
+
+# Activate virtual environment for NodeJs
+source ${NODEJS_VIRTUAL_ENV_DIR}/bin/activate
+
+echo -e "Virtual environments for pip and Node.js are now active!\n"
